@@ -28,7 +28,7 @@ namespace VRapper
 		public string DeviceID { get; private set; }
 		public string DeviceKey { get; private set; }
 
-		public StateFlags State { get; private set; }
+		public StateFlags Flags { get; private set; }
 
 		internal DisplayDevice(Win32Display.DISPLAY_DEVICE device)
 		{
@@ -36,7 +36,7 @@ namespace VRapper
 			DeviceString = device.DeviceString;
 			DeviceID = device.DeviceID;
 			DeviceKey = device.DeviceKey;
-			State = (StateFlags)device.StateFlags;
+			Flags = (StateFlags)device.StateFlags;
 		}
 	}
 }

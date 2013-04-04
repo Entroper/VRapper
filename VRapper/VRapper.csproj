@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DisplayDevice.cs" />
     <Compile Include="DisplayDevices.cs" />
+    <Compile Include="MonitorInfoEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Win32Display.cs" />
   </ItemGroup>
