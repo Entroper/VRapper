@@ -8,6 +8,8 @@ namespace VRapper
 {
 	public static class DisplayDevices
 	{
+		private static IList<MonitorInfoEx> _monitorInfo = null;
+ 
 		public static IEnumerable<DisplayDevice> EnumerateDevices()
 		{
 			int i = 0;
@@ -37,6 +39,42 @@ namespace VRapper
 			displayDeviceData.DeviceKey = String.Empty;
 
 			return displayDeviceData;
+		}
+
+		public static IEnumerable<MonitorInfoEx> EnumerateMonitors()
+		{
+			_monitorInfo = new List<MonitorInfoEx>();
+			Win32Display.EnumDisplayMonitors(0, IntPtr.Zero, MonitorEnumCallback, 0);
+			
+			var list = _monitorInfo;
+			_monitorInfo = null;
+			return list;
+		}
+
+		private static bool MonitorEnumCallback(int hMonitor, int hdcMonitor, Win32Display.RECT lprcRect, int dwData)
+		{
+			var monitorInfoData = CreateMonitorInfoData();
+			Win32Display.GetMonitorInfo(hMonitor, ref monitorInfoData);
+
+			_monitorInfo.Add(new MonitorInfoEx(monitorInfoData));
+
+			return true;
+		}
+
+		private static Win32Display.MONITORINFOEX CreateMonitorInfoData()
+		{
+			var monitorInfoData = new Win32Display.MONITORINFOEX();
+
+			monitorInfoData.cbSize = Marshal.SizeOf(monitorInfoData);
+
+			monitorInfoData.rcMonitor = new Win32Display.RECT();
+			monitorInfoData.rcWork = new Win32Display.RECT();
+
+			monitorInfoData.dwFlags = 0;
+
+			monitorInfoData.szDevice = String.Empty;
+
+			return monitorInfoData;
 		}
 	}
 }
