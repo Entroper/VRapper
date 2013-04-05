@@ -30,10 +30,10 @@ namespace VRapper
 		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
 		internal struct RECT
 		{
-			internal long left;
-			internal long top;
-			internal long right;
-			internal long bottom;
+			internal int left;
+			internal int top;
+			internal int right;
+			internal int bottom;
 		}
 
 		[StructLayout(LayoutKind.Sequential, CharSet=CharSet.Auto)]
@@ -47,12 +47,13 @@ namespace VRapper
 			internal string szDevice;
 		}
 
-		internal delegate bool MONITORENUMPROC(IntPtr hMonitor, IntPtr hdcMonitor, RECT lprcRect, IntPtr dwData);
+		internal delegate bool MONITORENUMPROC(int hMonitor, int hdcMonitor, RECT lprcRect, int dwData);
 
 		[DllImport("user32.dll", EntryPoint = "GetMonitorInfoW")]
-		internal static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFOEX lpmi);
+		internal static extern bool GetMonitorInfo(int hMonitor, ref MONITORINFOEX lpmi);
 
 		[DllImport("user32.dll")]
-		internal static extern bool EnumDisplayMonitors(IntPtr hdc, RECT lprcClip, MONITORENUMPROC lpfnEnum, IntPtr dwData);
+		// lprcClip is a RECT, but we need to be able to pass NULL, and we can't make RECT a class, because then MONITORINFOEX doesn't marshal correctly.
+		internal static extern bool EnumDisplayMonitors(int hdc, IntPtr lprcClip, MONITORENUMPROC lpfnEnum, int dwData);
 	}
 }
