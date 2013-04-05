@@ -34,12 +34,16 @@ namespace VRapper
 
 		public MonitorFlags Flags { get; private set; }
 
+		public string DeviceName { get; private set; }
+
 		internal MonitorInfoEx(Win32Display.MONITORINFOEX monitor)
 		{
 			MonitorRectangle = new Rectangle(monitor.rcMonitor);
 			WorkRectangle = new Rectangle(monitor.rcWork);
 
 			Flags = (MonitorFlags)monitor.dwFlags;
+
+			DeviceName = monitor.szDevice;
 		}
 	}
 }
