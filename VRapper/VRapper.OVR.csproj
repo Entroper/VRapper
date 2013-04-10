@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9E8F1D50-74EA-4C60-BD5C-AB2C5B53BC66}</ProjectGuid>
+    <ProjectGuid>{A737C243-12E0-4FAF-BE5A-61FF12A368DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HidLibrary</RootNamespace>
-    <AssemblyName>HidLibrary</AssemblyName>
+    <RootNamespace>VRapper.OVR</RootNamespace>
+    <AssemblyName>VRapper.OVR</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,7 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,20 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
-    <Compile Include="HidAsyncState.cs" />
-    <Compile Include="HidDevice.cs" />
-    <Compile Include="HidDeviceAttributes.cs" />
-    <Compile Include="HidDeviceCapabilities.cs" />
-    <Compile Include="HidDeviceData.cs" />
-    <Compile Include="HidDeviceEventMonitor.cs" />
-    <Compile Include="HidDevices.cs" />
-    <Compile Include="HidReport.cs" />
-    <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SensorDevice.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LICENSE" />
+    <ProjectReference Include="..\HidLibrary\VRapper.HidLibrary.csproj">
+      <Project>{9E8F1D50-74EA-4C60-BD5C-AB2C5B53BC66}</Project>
+      <Name>VRapper.HidLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VRapper.GdiLibrary\VRapper.GdiLibrary.csproj">
+      <Project>{E64178DD-0459-4B41-BB04-3291DF69F68A}</Project>
+      <Name>VRapper.GdiLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,6 +14,7 @@ namespace TestConsole
 			var hidDevices = HidDevices.Enumerate().ToList();
 			var displayDevices = DisplayDevices.EnumerateDevices().ToList();
 			var monitors = DisplayDevices.EnumerateMonitors().ToList();
+
 			Console.ReadLine();
 		}
 	}
