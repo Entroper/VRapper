@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HidLibrary;
-using VRapper;
+using VRapper.GdiLibrary;
+using VRapper.HidLibrary;
 
-namespace TestConsole
+namespace VRapper.TestConsole
 {
 	class Program
 	{

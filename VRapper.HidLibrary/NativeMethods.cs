@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace HidLibrary
+namespace VRapper.HidLibrary
 {
     internal static class NativeMethods
     {

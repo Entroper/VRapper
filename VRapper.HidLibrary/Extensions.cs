@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace HidLibrary
+namespace VRapper.HidLibrary
 {
     public static class Extensions
     {

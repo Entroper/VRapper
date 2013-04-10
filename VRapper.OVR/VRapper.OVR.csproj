@@ -2,20 +2,18 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EFE0A833-D912-4D4E-9C5E-CE706C1F33A8}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{A737C243-12E0-4FAF-BE5A-61FF12A368DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VRapper.TestConsole</RootNamespace>
-    <AssemblyName>VRapper.TestConsole</AssemblyName>
+    <RootNamespace>VRapper.OVR</RootNamespace>
+    <AssemblyName>VRapper.OVR</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,8 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SensorDevice.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VRapper\VRapper.OVR.csproj">
-      <Project>{A737C243-12E0-4FAF-BE5A-61FF12A368DA}</Project>
-      <Name>VRapper.OVR</Name>
+    <ProjectReference Include="..\VRapper.HidLibrary\VRapper.HidLibrary.csproj">
+      <Project>{9E8F1D50-74EA-4C60-BD5C-AB2C5B53BC66}</Project>
+      <Name>VRapper.HidLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VRapper.GdiLibrary\VRapper.GdiLibrary.csproj">
+      <Project>{E64178DD-0459-4B41-BB04-3291DF69F68A}</Project>
+      <Name>VRapper.GdiLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

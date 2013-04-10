@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace HidLibrary
+namespace VRapper.HidLibrary
 {
     public class HidDevice : IDisposable
     {

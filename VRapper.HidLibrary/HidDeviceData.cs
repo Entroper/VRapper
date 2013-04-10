@@ -1,4 +1,4 @@
-﻿namespace HidLibrary
+﻿namespace VRapper.HidLibrary
 {
     public class HidDeviceData
     {

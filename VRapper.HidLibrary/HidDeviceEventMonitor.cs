@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace HidLibrary
+namespace VRapper.HidLibrary
 {
     internal class HidDeviceEventMonitor
     {
