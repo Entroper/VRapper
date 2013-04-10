@@ -47,14 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HidLibrary\VRapper.HidLibrary.csproj">
-      <Project>{9E8F1D50-74EA-4C60-BD5C-AB2C5B53BC66}</Project>
-      <Name>VRapper.HidLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VRapper.GdiLibrary\VRapper.GdiLibrary.csproj">
-      <Project>{E64178DD-0459-4B41-BB04-3291DF69F68A}</Project>
-      <Name>VRapper.GdiLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VRapper\VRapper.OVR.csproj">
       <Project>{A737C243-12E0-4FAF-BE5A-61FF12A368DA}</Project>
       <Name>VRapper.OVR</Name>
